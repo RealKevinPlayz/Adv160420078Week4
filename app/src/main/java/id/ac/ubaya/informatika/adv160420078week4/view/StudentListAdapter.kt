@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ubaya.informatika.adv160420078week4.R
 import id.ac.ubaya.informatika.adv160420078week4.model.Student
+import kotlinx.android.synthetic.main.fragment_student_detail.view.*
 import kotlinx.android.synthetic.main.student_list_item.view.*
 
 var studenList = null
@@ -25,10 +26,15 @@ class StudentListAdapter(val studenList:ArrayList<Student>)
 
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        holder.view.txtCardId.text = studenList[position].id
+        holder.view.txtId.text = studenList[position].id
         holder.view.txtName.text = studenList[position].name
         holder.view.btnDetail.setOnClickListener {
-            val action = StudentListFragmentDirections.actionStudentDetail()
+            val studentId = studenList[position].id.toString()
+            val studentName = studenList[position].name.toString()
+            val studentBod = studenList[position].dob.toString()
+            val studentPhone = studenList[position].phone.toString()
+            val studentUrl = studenList[position].photoUrl.toString()
+            val action = StudentListFragmentDirections.actionStudentDetail(studentId, studentName, studentBod, studentPhone, studentUrl)
             Navigation.findNavController(it).navigate(action)
         }
     }
@@ -39,7 +45,7 @@ class StudentListAdapter(val studenList:ArrayList<Student>)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return studenList.size
     }
 }
 

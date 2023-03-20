@@ -34,6 +34,18 @@ class StudentListFragment : Fragment() {
     }
 
     fun observeViewModel() {
+        viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
+            studentListAdapter.updateStudentList(it)
+        })
+
+        viewModel.studentLoadErrorLD.observe(viewLifecycleOwner, Observer {
+            if(it == true) {
+                txtError.visibility = View.VISIBLE
+            } else {
+                txtError.visibility = View.GONE
+            }
+        })
+
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
                 recView.visibility = View.GONE
@@ -43,6 +55,8 @@ class StudentListFragment : Fragment() {
                 progressLoad.visibility = View.GONE
             }
         })
+
+
 
     }
 
