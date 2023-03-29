@@ -31,7 +31,7 @@ class StudentListAdapter(val studenList:ArrayList<Student>)
         holder.view.btnDetail.setOnClickListener {
             val studentId = studenList[position].id.toString()
             val studentName = studenList[position].name.toString()
-            val studentBod = studenList[position].dob.toString()
+            val studentBod = studenList[position].bod.toString()
             val studentPhone = studenList[position].phone.toString()
             val studentUrl = studenList[position].photoUrl.toString()
             val action = StudentListFragmentDirections.actionStudentDetail(studentId, studentName, studentBod, studentPhone, studentUrl)
