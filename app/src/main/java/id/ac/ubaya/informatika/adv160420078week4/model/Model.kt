@@ -1,6 +1,8 @@
 package id.ac.ubaya.informatika.adv160420078week4.model
 
+import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
+import com.google.gson.reflect.TypeToken
 
 data class Student(
     val id:String?,
@@ -13,4 +15,5 @@ data class Student(
     val photoUrl:String
 
 )
+
 
