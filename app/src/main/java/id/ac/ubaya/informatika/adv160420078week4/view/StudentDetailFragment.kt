@@ -21,8 +21,6 @@ import kotlinx.android.synthetic.main.student_list_item.*
 
 class StudentDetailFragment : Fragment() {
     private lateinit var viewModel: DetailViewModel
-    var studenList = ArrayList<Student>()
-
     var studId = ""
     var studName = ""
     var studBod = ""
@@ -46,7 +44,7 @@ class StudentDetailFragment : Fragment() {
             studUrl = StudentDetailFragmentArgs.fromBundle(requireArguments()).url
         }
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.fetch(studId, studName, studBod, studPhone, studUrl)
+        viewModel.fetch(studId)
         observeViewModel()
     }
     fun observeViewModel() {
