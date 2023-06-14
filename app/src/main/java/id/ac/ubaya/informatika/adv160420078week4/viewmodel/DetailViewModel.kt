@@ -36,7 +36,5 @@ class DetailViewModel: ViewModel() {
                 Log.e("showvoley", it.toString())
             })
         stringRequest.tag = TAG
-
-
     }
 }
