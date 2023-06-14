@@ -74,14 +74,6 @@ class MainActivity : AppCompatActivity() {
 
             observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer)
-
-/*        Observable.just("a stream of data","hellow","world")		   .subscribe(
-        { Log.d("Messages", it) },
-        { Log.e("Messages", it.message.toString()) },
-        { Log.d("Messages", "Completed") }
-        )*/
-
-
         }
     }
 }

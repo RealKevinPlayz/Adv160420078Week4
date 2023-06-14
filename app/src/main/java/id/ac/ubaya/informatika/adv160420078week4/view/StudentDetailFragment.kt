@@ -38,10 +38,10 @@ class StudentDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if(arguments != null) {
             studId = StudentDetailFragmentArgs.fromBundle(requireArguments()).id
-            studName = StudentDetailFragmentArgs.fromBundle(requireArguments()).name
-            studBod = StudentDetailFragmentArgs.fromBundle(requireArguments()).bod
-            studPhone = StudentDetailFragmentArgs.fromBundle(requireArguments()).phone
-            studUrl = StudentDetailFragmentArgs.fromBundle(requireArguments()).url
+//            studName = StudentDetailFragmentArgs.fromBundle(requireArguments()).name
+//            studBod = StudentDetailFragmentArgs.fromBundle(requireArguments()).bod
+//            studPhone = StudentDetailFragmentArgs.fromBundle(requireArguments()).phone
+//            studUrl = StudentDetailFragmentArgs.fromBundle(requireArguments()).url
         }
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
         viewModel.fetch(studId)

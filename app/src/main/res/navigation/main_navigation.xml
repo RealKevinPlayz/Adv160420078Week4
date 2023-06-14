@@ -13,18 +13,6 @@
         <argument
             android:name="id"
             app:argType="string" />
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="bod"
-            app:argType="string" />
-        <argument
-            android:name="phone"
-            app:argType="string" />
-        <argument
-            android:name="url"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/studentListFragment"
